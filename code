@@ -1,0 +1,38 @@
+#include <iostream>
+
+// Class for factorial calculation
+class Factorial {
+public:
+    // Function to calculate the factorial of a given number
+    int calculate(int num) {
+        if (num < 0) {
+            std::cout << "Error: Number should be non-negative." << std::endl;
+            return 0;
+        }
+        else if (num == 0) {
+            return 1;
+        }
+        else {
+            int factorial = 1;
+            for (int i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+            return factorial;
+        }
+    }
+};
+
+int main() {
+    // Create a factorial object
+    Factorial factorial;
+
+    // Get the number from the user
+    int num;
+    std::cout << "Enter the number: ";
+    std::cin >> num;
+
+    // Calculate and print the factorial
+    int result = factorial.calculate(num);
+    std::cout << "Factorial of " << num << " is: " << result << std::endl;
+    return 0;
+}
